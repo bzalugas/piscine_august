@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 22:21:27 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/02 23:20:22 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/03 11:21:54 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	ft_print_combn(int n)
 	int		valid;
 
 	i = -1;
-	while (++i < n)
+	while (++i < n && i < 9)
 		nb[i] = i + '0';
 	valid = 1;
-	while (valid != 2)
+	while (n > 0 && n < 10 && valid != 2)
 	{
 		if (valid)
 			write(1, nb, n);
@@ -53,5 +53,5 @@ void	ft_print_combn(int n)
 		}
 		valid = is_valid(nb, n);
 	}
-	write(1, nb, n);
+	write(1, nb, (n - n * !(n > 0 && n < 10)));
 }
