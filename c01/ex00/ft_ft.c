@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:39:09 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/03 12:40:34 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/05 11:01:51 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,3 +14,15 @@ void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
+
+/*#include <stdio.h>
+int	main(void)
+{
+	int	n;
+
+	n = 23;
+	printf("n = %d\n", n);
+	ft_ft(&n);
+	printf("n = %d\n", n);
+	return (0);
+}*/

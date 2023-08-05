@@ -6,15 +6,25 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:42:52 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/03 12:46:37 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/05 11:15:55 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	*a = *a + *b;
+	*b = *a - *b;
+	*a = *a - *b;
 }
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+	int	a = 23;
+	int	b = 5;
+
+	printf("a = %d, b = %d\n", a, b);
+	ft_swap(&a, &b);
+	printf("a = %d, b = %d\n", a, b);
+}*/

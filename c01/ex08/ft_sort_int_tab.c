@@ -6,17 +6,15 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 11:25:00 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/04 12:50:14 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/05 11:27:57 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	*a = *a + *b;
+	*b = *a - *b;
+	*a = *a - *b;
 }
 
 void	ft_sort_int_tab(int *tab, int size)
@@ -37,3 +35,20 @@ void	ft_sort_int_tab(int *tab, int size)
 		i++;
 	}
 }
+
+/*#include <stdio.h>
+int	main(void)
+{
+	int tab[] = {1234, 45, -6, 12, 0, 1};
+	int size = 6;
+	int i;
+	i = -1;
+	while (++i < size)
+		printf("%d ", tab[i]);
+	ft_sort_int_tab(tab, size);
+	printf("\n");
+	i = -1;
+	while (++i < size)
+		printf("%d ", tab[i]);
+	return (0);
+}*/
