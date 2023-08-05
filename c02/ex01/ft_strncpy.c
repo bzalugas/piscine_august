@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/04 13:13:37 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 11:41:24 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/05 11:42:34 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/05 13:25:36 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (src[i])
+	while (i < n && src[i])
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	while (!src[i] && i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
 
@@ -31,9 +35,10 @@ int	main(void)
 	char	*s = "ma chaine a copier";
 	char	s2[19];
 	char	s3[19];
+	unsigned int	n = 19;
 
-	printf("chaine de base : %s\nresultat strcpy\t\t: %s\n \
+	printf("chaine de base : %s\nresultat strcpy\t\t: %s\n
 	resultat ft_strcpy\t: %s\n",
-		   s, strcpy(s2, s), ft_strcpy(s3, s));
+		   s, strncpy(s2, s, n), ft_strncpy(s3, s, n));
 	return (0);
 }*/

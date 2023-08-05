@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/04 13:13:37 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 11:41:24 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/05 13:50:49 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/05 14:01:47 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (src[i])
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (str);
 }
 
 /*#include <stdio.h>
-#include <string.h>
+
 int	main(void)
 {
-	char	*s = "ma chaine a copier";
-	char	s2[19];
-	char	s3[19];
+	char s[] = "abcABCdef";
 
-	printf("chaine de base : %s\nresultat strcpy\t\t: %s\n \
-	resultat ft_strcpy\t: %s\n",
-		   s, strcpy(s2, s), ft_strcpy(s3, s));
+	printf("%s\n", s);
+	printf("%s\n", ft_strupcase(s));
 	return (0);
 }*/
