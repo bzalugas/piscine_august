@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 13:28:00 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 21:34:43 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/05 21:31:50 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/05 21:32:57 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 'A' || str[i] > 'Z')
-			return (0);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
 		i++;
 	}
-	return (1);
+	return (str);
 }
 
 /*#include <stdio.h>
 
 int	main(void)
 {
-	char *s = "ABC";
+	char s[] = "abcABCdef";
 
-	printf("%s %s que des lettres majuscules\n", s,
-		   ft_str_is_uppercase(s) == 1 ? "ne contient" : "ne contient pas");
+	printf("%s\n", s);
+	printf("%s\n", ft_strlowcase(s));
 	return (0);
 }*/

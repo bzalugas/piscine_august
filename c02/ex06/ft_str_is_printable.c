@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:29:55 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 13:31:34 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/05 21:35:09 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	ft_str_is_printable(char *str)
 	return (1);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
-/*int	main(void)
+int	main(void)
 {
 	char *s = "ABC";
 

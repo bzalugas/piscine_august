@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 13:28:00 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 21:34:43 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/05 21:37:30 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/05 21:57:58 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+int	is_alphanum(char c)
+{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	if (c >= '0' && c <= '9')
+		return (2);
+	return (0);
+}
+
+char	*ft_strcapitalize(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 'A' || str[i] > 'Z')
-			return (0);
+		if (is_alphanum(str[i]) == 1 && (i == 0 || !is_alphanum(str[i - 1])))
+			if (*str >= 'a' && *str <= 'z')
+				str[i] -= 32;
 		i++;
 	}
-	return (1);
+	return (str);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	char *s = "ABC";
-
-	printf("%s %s que des lettres majuscules\n", s,
-		   ft_str_is_uppercase(s) == 1 ? "ne contient" : "ne contient pas");
+	char s[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	printf("%s\n", s);
+	printf("%s\n", ft_strcapitalize(s));
 	return (0);
-}*/
+}
