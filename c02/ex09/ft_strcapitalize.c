@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 21:37:30 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 21:57:58 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/05 23:02:32 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ char	*ft_strcapitalize(char *str)
 	while (str[i])
 	{
 		if (is_alphanum(str[i]) == 1 && (i == 0 || !is_alphanum(str[i - 1])))
-			if (*str >= 'a' && *str <= 'z')
+			if (str[i] >= 'a' && str[i] <= 'z')
 				str[i] -= 32;
 		i++;
 	}
 	return (str);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -42,4 +42,4 @@ int	main(void)
 	printf("%s\n", s);
 	printf("%s\n", ft_strcapitalize(s));
 	return (0);
-}
+}*/
