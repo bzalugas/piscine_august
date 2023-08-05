@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:51:30 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/03 16:55:19 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/05 21:19:39 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,9 @@ void	ft_putstr(char *str)
 		i++;
 	write(1, str, i);
 }
+
+/*int	main(void)
+{
+	ft_putstr("Ma/mon correctrice/correcteur est la/le meilleur(e)");
+	return (0);
+}*/
