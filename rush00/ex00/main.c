@@ -6,7 +6,7 @@
 /*   By: sduvnjak <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 17:18:25 by sduvnjak          #+#    #+#             */
-/*   Updated: 2023/08/05 18:49:30 by sduvnjak         ###   ########.fr       */
+/*   Updated: 2023/08/05 23:20:17 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@ void	rush(int x, int t);
 
 int	ft_atoi(char *str)
 {
-	int	nb;
-	int	sign;
+	int				nb;
+	int				sign;
 	unsigned int	i;
 
 	i = 0;
