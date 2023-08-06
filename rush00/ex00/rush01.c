@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush04.c                                           :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 23:14:34 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 23:17:45 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/06 15:29:56 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/06 15:31:20 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,78 +14,96 @@ void	ft_putchar(char c);
 
 void	first_line(int x)
 {
-	int	cpt;
+	int	compteur;
 
-	cpt = 0;
-	while (cpt < x)
+	compteur = 0;
+	while (compteur < x)
 	{
-		if (cpt == 0)
-			ft_putchar('A');
-		else if (cpt == x - 1)
-			ft_putchar('C');
+		if (compteur == 0)
+		{
+			ft_putchar('/');
+		}
+		else if (compteur == x - 1)
+		{
+			ft_putchar('\\');
+		}
 		else
-			ft_putchar('B');
-		cpt++;
+		{
+			ft_putchar('*');
+		}
+		compteur++;
 	}
 }
 
 void	body_line(int x)
 {
-	int	cpt;
+	int	compteur;
 
-	cpt = 0;
-	while (cpt < x)
+	compteur = 0;
+	while (compteur < x)
 	{
-		if (cpt == 0)
-			ft_putchar('B');
-		else if (cpt == x - 1)
-			ft_putchar('B');
+		if (compteur == 0)
+		{
+			ft_putchar('*');
+		}
+		else if (compteur == x - 1)
+		{
+			ft_putchar('*');
+		}
 		else
+		{
 			ft_putchar(' ');
-		cpt++;
+		}
+		compteur++;
 	}
 }
 
 void	last_line(int x)
 {
-	int	cpt;
+	int	compteur;
 
-	cpt = 0;
-	while (cpt < x)
+	compteur = 0;
+	while (compteur < x)
 	{
-		if (cpt == 0)
-			ft_putchar('C');
-		else if (cpt == x - 1)
-			ft_putchar('A');
+		if (compteur == 0)
+		{
+			ft_putchar('\\');
+		}
+		else if (compteur == x - 1)
+		{
+			ft_putchar('/');
+		}
 		else
-			ft_putchar('B');
-		cpt++;
+		{
+			ft_putchar('*');
+		}
+		compteur++;
 	}
 }
 
 void	rush(int x, int y)
 {
-	int	cpt;
+	int	compteur;
 
 	if (x <= 0 || y <= 0)
 		return ;
-	cpt = 0;
-	if (cpt == 0)
+	compteur = 0;
+	if (compteur == 0)
 	{
 		first_line(x);
-		cpt++;
+		compteur++;
 		ft_putchar('\n');
 	}
-	while (cpt > 0 && cpt < y - 1)
+	while (compteur > 0 && compteur < y - 1)
 	{
 		body_line(x);
-		cpt++;
+		compteur++;
 		ft_putchar('\n');
 	}
-	if (cpt == y - 1)
+	if (compteur == y - 1)
 	{
 		last_line(x);
-		cpt++;
+		compteur++;
 		ft_putchar('\n');
 	}
 }
