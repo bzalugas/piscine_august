@@ -6,15 +6,18 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 17:00:55 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 21:19:51 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/06 13:54:02 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	*a = *a + *b;
-	*b = *a - *b;
-	*a = *a - *b;
+	if (a != b)
+	{
+		*a = *a + *b;
+		*b = *a - *b;
+		*a = *a - *b;
+	}
 }
 
 void	ft_rev_int_tab(int *tab, int size)
