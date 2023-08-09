@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:07:37 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 13:25:13 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/09 15:45:00 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_str_is_alpha(char *str)
 
 int	main(void)
 {
-	char *s = "ABCDElskjdf345678$%^";
+	char s[] = "ABCDElskjdf345678$%^";
 
 	printf("%s %s que des caracteres alphabetiques\n", s,
 		   ft_str_is_alpha(s) == 1 ? "ne contient" : "ne contient pas");

@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:26:09 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 13:27:35 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/09 15:46:33 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_str_is_lowercase(char *str)
 
 int	main(void)
 {
-	char *s = "abc345678";
+	char s[] = "abc345678";
 
 	printf("%s %s que des lettres minuscules\n", s,
 		   ft_str_is_lowercase(s) == 1 ? "ne contient" : "ne contient pas");

@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 13:13:37 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/05 11:41:24 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/09 14:50:33 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strcpy(char *dest, char *src)
 #include <string.h>
 int	main(void)
 {
-	char	*s = "ma chaine a copier";
+	char	s[] = "ma chaine a copier";
 	char	s2[19];
 	char	s3[19];
 
