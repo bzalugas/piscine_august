@@ -6,9 +6,11 @@
 /*   By: sduvnjak <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 17:18:25 by sduvnjak          #+#    #+#             */
-/*   Updated: 2023/08/06 15:26:47 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/06 16:38:18 by sduvnjak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	rush(int x, int t);
 
@@ -40,12 +42,17 @@ int	main(int argc, char **argv)
 	int	y;
 
 	if (argc != 3)
-		rush(2, 3);
-	else
 	{
-		x = ft_atoi(argv[1]);
-		y = ft_atoi(argv[2]);
-		rush(x, y);
+		write(2, "Incorrect number of arguments\n", 30);
+		return (1);
 	}
+	x = ft_atoi(argv[1]);
+	y = ft_atoi(argv[2]);
+	if (x <= 0 || y <= 0)
+	{
+		write(2, "Arguments should be greater than 0\n", 35);
+		return (1);
+	}
+	rush(x, y);
 	return (0);
 }

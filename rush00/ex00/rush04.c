@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush03.c                                           :+:      :+:    :+:   */
+/*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sduvnjak <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lquehec <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/06 12:38:54 by sduvnjak          #+#    #+#             */
-/*   Updated: 2023/08/06 16:22:32 by sduvnjak         ###   ########.fr       */
+/*   Created: 2023/08/05 19:20:52 by lquehec           #+#    #+#             */
+/*   Updated: 2023/08/05 19:21:49 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	first_last_line(int x)
+void	first_line(int x)
 {
 	int	compteur;
 
@@ -58,6 +58,29 @@ void	body_line(int x)
 	}
 }
 
+void	last_line(int x)
+{
+	int	compteur;
+
+	compteur = 0;
+	while (compteur < x)
+	{
+		if (compteur == 0)
+		{
+			ft_putchar('C');
+		}
+		else if (compteur == x - 1)
+		{
+			ft_putchar('A');
+		}
+		else
+		{
+			ft_putchar('B');
+		}
+		compteur++;
+	}
+}
+
 void	rush(int x, int y)
 {
 	int	compteur;
@@ -67,7 +90,7 @@ void	rush(int x, int y)
 	compteur = 0;
 	if (compteur == 0)
 	{
-		first_last_line(x);
+		first_line(x);
 		compteur++;
 		ft_putchar('\n');
 	}
@@ -79,7 +102,7 @@ void	rush(int x, int y)
 	}
 	if (compteur == y - 1)
 	{
-		first_last_line(x);
+		last_line(x);
 		compteur++;
 		ft_putchar('\n');
 	}

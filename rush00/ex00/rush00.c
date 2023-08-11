@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush03.c                                           :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sduvnjak <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lquehec <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/06 12:38:54 by sduvnjak          #+#    #+#             */
-/*   Updated: 2023/08/06 16:22:32 by sduvnjak         ###   ########.fr       */
+/*   Created: 2023/08/05 19:23:19 by lquehec           #+#    #+#             */
+/*   Updated: 2023/08/05 19:28:55 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,13 @@ void	first_last_line(int x)
 	compteur = 0;
 	while (compteur < x)
 	{
-		if (compteur == 0)
+		if (compteur == 0 || compteur == x - 1)
 		{
-			ft_putchar('A');
-		}
-		else if (compteur == x - 1)
-		{
-			ft_putchar('C');
+			ft_putchar('o');
 		}
 		else
 		{
-			ft_putchar('B');
+			ft_putchar('-');
 		}
 		compteur++;
 	}
@@ -42,13 +38,9 @@ void	body_line(int x)
 	compteur = 0;
 	while (compteur < x)
 	{
-		if (compteur == 0)
+		if (compteur == 0 || compteur == x - 1)
 		{
-			ft_putchar('B');
-		}
-		else if (compteur == x - 1)
-		{
-			ft_putchar('B');
+			ft_putchar('|');
 		}
 		else
 		{
