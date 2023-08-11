@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 18:44:26 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/09 18:57:42 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/09 18:58:29 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/09 19:11:28 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (s1[i] || s2[i])
+	while (i < n - 1 && (s1[i] || s2[i]))
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
@@ -29,14 +31,16 @@ int	ft_strcmp(char *s1, char *s2)
 
 int	main(void)
 {
-	char	s1[] = "Bonjour a tous !";
-	char	s2[] = "";
-	int		res1;
-	int		res2;
+	char			s1[] = "Bonjour a tous !";
+	char			s2[] = "Bonojur a tous !";
+	unsigned int	n;
+	int				res1;
+	int				res2;
 
-	res1 = strcmp(s1, s2);
-	res2 = ft_strcmp(s1, s2);
-	printf("[STRCMP]\tres = %d\n", res1);
-	printf("[FT_STRCMP]\tres = %d\n", res2);
+	n = 5;
+	res1 = strncmp(s1, s2, n);
+	res2 = ft_strncmp(s1, s2, n);
+	printf("[STRNCMP]\tres = %d\n", res1);
+	printf("[FT_STRNCMP]\tres = %d\n", res2);
 	return (0);
 }*/
