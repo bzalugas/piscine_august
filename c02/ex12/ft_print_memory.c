@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 14:53:59 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/10 19:08:58 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:46:33 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,13 @@ void	print_addr(unsigned long addr, int i)
 		write(1, ": ", 2);
 }
 
-void	print_char_hex(char c)
+void	print_char_hex(unsigned char c)
 {
 	char	hex[2];
 
-	if (c == -128)
-		write(1, "-80", 3);
-	else
-	{
-		if (c < 0)
-		{
-			write(1, "-", 1);
-			c *= -1;
-		}
-		hex[0] = "0123456789abcdef"[c / 16];
-		hex[1] = "0123456789abcdef"[c % 16];
-		write(1, hex, 2);
-	}
+	hex[0] = "0123456789abcdef"[c / 16];
+	hex[1] = "0123456789abcdef"[c % 16];
+	write(1, hex, 2);
 }
 
 void	print_str(char *str, unsigned int len)
@@ -98,7 +88,7 @@ int	main(void)
 {
 	char	s[] = "Bonjour les aminches\t\n\tc\a est fou\ttout\tce qu on peut \
 	faire avec\t\n\tprint_memory\n\n\n\tlol.lol\n ";
-	char s[] = {'B','o','n','j','o','u','r',-0x7f, 0x7f};
-	ft_print_memory(s, 10);
+	char s[] = {'B','o','n','j','o','u','r',-0x7f, 0x7f, 'a','b','c','d'};
+	ft_print_memory(s, 15);
 	return (0);
 }*/

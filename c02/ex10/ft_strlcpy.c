@@ -6,13 +6,12 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 10:29:57 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/10 20:15:10 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:48:49 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	i;
 	unsigned int	len_src;
 
 	len_src = 0;
@@ -21,9 +20,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		dest[len_src] = src[len_src];
 		len_src++;
 	}
-	i = len_src;
-	while (size && i < size)
-		dest[i++] = '\0';
+	dest[len_src] = '\0';
 	while (src[len_src])
 		len_src++;
 	return (len_src);
@@ -32,14 +29,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 /*#include <bsd/string.h>
 #include <stdio.h>
 #include <unistd.h>
-#define SIZE 5
+#define SIZE 36
 
 int	main(void)
 {
 	unsigned int	size = SIZE;
-	char			s[] = "Bonj";
-	char			d1[] = "lfSLJGls";
-	char			d2[] = "lfSLJGls";
+	char			s[] = "Bonjour a tous les amis de la terre";
+	char			d1[] = "abcdefghijklmnopqrstuvwxyzabcde";
+	char			d2[] = "abcdefghijklmnopqrstuvwxyzabcde";
 	unsigned long	res1;
 	unsigned int	res2;
 	unsigned int	i;

@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:52:59 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/10 19:00:11 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:46:48 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,13 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_put_hex(char c)
+void	ft_put_hex(unsigned char c)
 {
 	char	hex[2];
 
-	if (c == -128)
-		write(1, "-80", 3);
-	else
-	{
-		if (c < 0)
-		{
-			write(1, "-", 1);
-			c *= -1;
-		}
-		hex[0] = "0123456789abcdef"[c / 16];
-		hex[1] = "0123456789abcdef"[c % 16];
-		write(1, hex, 2);
-	}
+	hex[0] = "0123456789abcdef"[c / 16];
+	hex[1] = "0123456789abcdef"[c % 16];
+	write(1, hex, 2);
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -51,12 +41,10 @@ void	ft_putstr_non_printable(char *str)
 	}
 }
 
-/*#include <stdio.h>
-
-int	main(void)
+/*int	main(void)
 {
-	char string[] = {-0x7f,-0x80,'c','o','u','c',0x02,'o','u',0x0a,'t','u',0x20,'v',
-		'a','s',0x20,'b','i','e','n',0x20,'?', 0x7f};
+	char string[] = {1, -0x7f,-0x80,'c','o','u','c',0x02,'o','u',0x0a,'t',
+	'u',0x20,'v', 'a','s',0x20,'b','i','e','n',0x20,'?', 0x7f};
 	ft_putstr_non_printable(string);
 	return (0);
 }*/
