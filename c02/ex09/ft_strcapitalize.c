@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 21:37:30 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/09 15:55:34 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:34:00 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strcapitalize(char *str)
 		type = char_type(str[i]);
 		if (type == 2 && (i == 0 || !char_type(str[i - 1])))
 			str[i] -= 32;
-		else if (type == 1)
+		else if (type == 1 && i > 0 && char_type(str[i - 1]))
 			str[i] += 32;
 		i++;
 	}
@@ -44,7 +44,8 @@ char	*ft_strcapitalize(char *str)
 
 int	main(void)
 {
-	char s[] = "salut, coMMent tu vas ? 42Mots quarante-deux; cinquante+et+un";
+	//char s[] = "salut, coMMent tu vas ? 42Mots quarante-deux; cinquante+et+un";
+	char s[] = "Rekt17+loL Mdr mDR 4242L42";
 	printf("%s\n", s);
 	printf("%s\n", ft_strcapitalize(s));
 	return (0);

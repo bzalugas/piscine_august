@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:52:59 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/07 14:52:23 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/10 19:00:11 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,23 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_put_hex(char c, char pad)
+void	ft_put_hex(char c)
 {
-	if (c >= 16)
-	{
-		ft_put_hex(c / 16, 0);
-		pad = 0;
-	}
-	if (pad)
-		ft_putchar('0');
-	if (c % 16 > 9)
-		ft_putchar(c % 16 + 'a' - 10);
+	char	hex[2];
+
+	if (c == -128)
+		write(1, "-80", 3);
 	else
-		ft_putchar(c % 16 + '0');
+	{
+		if (c < 0)
+		{
+			write(1, "-", 1);
+			c *= -1;
+		}
+		hex[0] = "0123456789abcdef"[c / 16];
+		hex[1] = "0123456789abcdef"[c % 16];
+		write(1, hex, 2);
+	}
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -39,7 +43,7 @@ void	ft_putstr_non_printable(char *str)
 		if (*str < 32 || *str > 126)
 		{
 			ft_putchar('\\');
-			ft_put_hex(*str, 1);
+			ft_put_hex(*str);
 		}
 		else
 			ft_putchar(*str);
@@ -47,8 +51,12 @@ void	ft_putstr_non_printable(char *str)
 	}
 }
 
-/*int	main(void)
+/*#include <stdio.h>
+
+int	main(void)
 {
-	char s[] = "Coucou\ntu vas bien ?\t\n\r~";
-	ft_putstr_non_printable(s);
+	char string[] = {-0x7f,-0x80,'c','o','u','c',0x02,'o','u',0x0a,'t','u',0x20,'v',
+		'a','s',0x20,'b','i','e','n',0x20,'?', 0x7f};
+	ft_putstr_non_printable(string);
+	return (0);
 }*/
