@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 19:12:51 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/14 22:04:32 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/14 14:40:20 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/14 22:09:31 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
 	unsigned int	dst_len;
@@ -19,7 +19,7 @@ char	*ft_strcat(char *dest, char *src)
 	while (dest[dst_len])
 		dst_len++;
 	i = 0;
-	while (src[i])
+	while (i < nb && src[i])
 	{
 		dest[dst_len + i] = src[i];
 		i++;
@@ -38,11 +38,12 @@ int	main(void)
 	char	s[] = "tout le monde.";
 	char	d1[SIZE] = "Bonjour ";
 	char	d2[SIZE] = "Bonjour ";
+	int		size = 15;
 
-	printf("[STRCAT]\tAppend <%s> at the end of <%s>\n", s, d1);
-	strcat(d1, s);
+	printf("[STRNCAT]\tAppend <%s> at the end of <%s>\n", s, d1);
+	strncat(d1, s, size);
 	printf("d1 = <%s>\n", d1);
-	printf("[FT_STRCAT]\tAppend <%s> at the end of <%s>\n", s, d2);
-	ft_strcat(d2, s);
+	printf("[FT_STRNCAT]\tAppend <%s> at the end of <%s>\n", s, d2);
+	ft_strncat(d2, s, size);
 	printf("d2 = <%s>\n", d2);
 }*/
