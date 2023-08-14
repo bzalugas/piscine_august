@@ -6,13 +6,13 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 16:40:28 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/13 20:55:53 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/13 22:40:51 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-int	ft_print_error(char *msg, void *addr1, void *addr2)
+int	print_error(char *msg, void *addr1, void *addr2)
 {
 	if (addr1)
 		free(addr1);
@@ -20,6 +20,15 @@ int	ft_print_error(char *msg, void *addr1, void *addr2)
 		free(addr2);
 	ft_putstr(msg);
 	return (1);
+}
+
+int	finish(void *a, void *b)
+{
+	if (a)
+		free(a);
+	if (b)
+		free(b);
+	return (0);
 }
 
 int	ft_is_good_num(char c, int width)
@@ -63,21 +72,23 @@ int	main(int argc, char **argv)
 	int		i;
 	int		width;
 
+	views = NULL;
+	map = NULL;
 	if (argc == 2)
 	{
 		views = parse_views(argv[1], &width);
 		map = (char *)malloc(sizeof(char) * (width * width));
 		if (!views || !map)
-			return (ft_print_error("Error\n", views, map));
+			return (print_error("Error\n", views, map));
 		i = -1;
 		while (++i < width * width)
 			map[i] = '0';
 		if (ft_skyscraper(views, map, width, 0))
 			ft_display(map, width);
 		else
-			return (ft_print_error("Error\n", views, map));
+			return (print_error("Error\n", views, map));
 	}
 	else
-		return (ft_print_error("Error\n", NULL, NULL));
-	return (0);
+		return (print_error("Error\n", NULL, NULL));
+	return (finish(views, map));
 }
