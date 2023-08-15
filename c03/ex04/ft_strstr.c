@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:47:04 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/15 18:01:47 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/15 18:29:47 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strstr(char *str, char *to_find)
 	return (0);
 }
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 int	main(void)
@@ -39,4 +39,4 @@ int	main(void)
 	printf("<%s> in <%s> ? => %s\n", needle, s, strstr(s, needle));
 	printf("<%s> in <%s> ? => %s\n", needle, s, ft_strstr(s, needle));
 	return (0);
-}
+}*/
