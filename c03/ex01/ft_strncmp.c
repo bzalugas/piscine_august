@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:58:29 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/15 01:22:58 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/15 10:52:12 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (s1[i] - s2[i]);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
-	char			s1[] = "Bonjour a tous !";
-	char			s2[] = "Bonaour a tous !";
+	char			s1[] = "e";
+	char			s2[] = "";
 	unsigned int	n;
 	int				res1;
 	int				res2;
@@ -39,4 +39,4 @@ int	main(void)
 	printf("[STRNCMP]\tres = %d\n", res1);
 	printf("[FT_STRNCMP]\tres = %d\n", res2);
 	return (0);
-}
+}*/
