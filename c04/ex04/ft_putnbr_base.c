@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:19:17 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/15 19:47:53 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/16 18:01:42 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	valid_base(char *base, int *len)
 		i++;
 	}
 	*len = i;
-	if (i > 2)
+	if (i >= 2)
 		return (1);
 	return (0);
 }
@@ -62,5 +62,5 @@ void	ft_putnbr_base(int nbr, char *base)
 
 /*int	main(void)
 {
-	ft_putnbr_base(42, "0123456789abcdef");
+	ft_putnbr_base(42, "01");
 }*/
