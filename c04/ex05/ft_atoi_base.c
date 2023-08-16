@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:02:22 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/16 18:57:55 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:48:21 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	ft_atoi_base(char *str, char *base)
 	int	len;
 	int	nb;
 	int	sign;
+	int	index;
 
 	if (!valid_base(base, &len))
 		return (0);
@@ -69,9 +70,12 @@ int	ft_atoi_base(char *str, char *base)
 		str++;
 	}
 	nb = 0;
-	while (*str && find(*str, base) != -1)
+	while (*str)
 	{
-		nb = nb * len + find(*str, base);
+		index = find(*str, base);
+		if (index == -1)
+			return (nb * sign);
+		nb = nb * len + index;
 		str++;
 	}
 	return (nb * sign);
