@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:02:22 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/17 00:48:21 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/17 17:16:37 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,8 @@ int	ft_atoi_base(char *str, char *base)
 		str++;
 	sign = 1;
 	while (*str && (*str == '-' || *str == '+'))
-	{
-		if (*str == '-')
+		if (*str++ == '-')
 			sign = -sign;
-		str++;
-	}
 	nb = 0;
 	while (*str)
 	{
@@ -84,6 +81,13 @@ int	ft_atoi_base(char *str, char *base)
 /*#include <stdio.h>
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	printf("<%s> in base <%s> = %d in base 10.\n", argv[2], argv[1], ft_atoi_base(argv[2], argv[1]));
+	char	*base;
+	char	*n;
+	int		nb;
+	if (argc != 3)
+		return (1);
+	base = argv[1];
+	n = argv[2];
+	nb = ft_atoi_base(n, base);
+	printf("<%s> in base <%s> = %d in base 10.\n", n, base, nb);
 }*/
