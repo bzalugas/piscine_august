@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 16:40:28 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/13 22:40:51 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:31:08 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*parse_views(char *str, int *width)
 	*width = (*width + 1) / 8;
 	if (*width < 2 || *width > 9)
 		return (NULL);
-	views = (char *)malloc(sizeof(char) * (*width * 4));
+	views = (char *)malloc(sizeof(char) * (*width * 4) + 1);
 	if (!views)
 		return (NULL);
 	i = -1;
@@ -80,6 +80,7 @@ int	main(int argc, char **argv)
 		map = (char *)malloc(sizeof(char) * (width * width));
 		if (!views || !map)
 			return (print_error("Error\n", views, map));
+		views[width * 4] = '\0';
 		i = -1;
 		while (++i < width * width)
 			map[i] = '0';
