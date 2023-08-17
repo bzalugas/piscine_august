@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:19:17 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/17 19:11:12 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:20:06 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	valid_base(char *base, int *len)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || (base[i] >= 9 && base[i] <= 13))
+		if (base[i] == '+' || base[i] == '-')
 			return (0);
 		j = i;
 		while (base[++j])

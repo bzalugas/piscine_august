@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:25:39 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/17 13:18:15 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:04:30 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		n *= -1;
 	}
-	if (n > 10)
+	if (n > 9)
 		ft_putnbr(n / 10);
 	ft_putchar(n % 10 + '0');
 }
@@ -35,6 +35,9 @@ void	ft_putnbr(int nb)
 /*int	main(void)
 {
 	int	n;
+	n = 10;
+	ft_putnbr(n);
+	write(1, "\n", 1);
 	n = 42;
 	ft_putnbr(n);
 	write(1, "\n", 1);
