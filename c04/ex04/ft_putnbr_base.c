@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:19:17 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/17 23:20:06 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 01:29:18 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,25 @@ int	valid_base(char *base, int *len)
 	return (0);
 }
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	len_base;
+	int			len_base;
+	long int	n;
 
-	if (!valid_base(base, &len_base) || len_base < 2)
+	if (!valid_base(base, &len_base))
 		return ;
-	if (nbr >= len_base)
-		ft_putnbr_base(nbr / len_base, base);
-	ft_putchar(base[nbr % len_base]);
+	n = nbr;
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n *= -1;
+	}
+	if (n >= len_base)
+		ft_putnbr_base(n / len_base, base);
+	write(1, &base[n % len_base], 1);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	ft_putnbr_base(42, "01");
-}*/
+	ft_putnbr_base(18, "01234");
+}
