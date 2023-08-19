@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 00:15:19 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/18 10:17:54 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:32:10 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ char	*ft_strdup(char *src)
 	return (dst);
 }
 
-/*/#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
 	char	*d;
 
 	d = ft_strdup("salut les amis");
 	printf("%s\n", d);
+	free(d);
 	return (0);
 }*/
