@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:19:17 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/19 01:29:18 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 13:37:14 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	write(1, &base[n % len_base], 1);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	ft_putnbr_base(18, "01234");
-}
+	ft_putnbr_base(42, "01");
+}*/
