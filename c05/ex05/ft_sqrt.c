@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:09:53 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/18 10:28:36 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 20:41:42 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@ int	ft_sqrt(int nb)
 {
 	int	n;
 	int	i;
+	int	j;
 
-	n = 1;
 	i = 0;
-	while (nb > 0)
+	j = 1;
+	n = nb;
+	while (n > 0)
 	{
-		nb -= n;
-		n += 2;
+		n -= j;
+		j += 2;
 		i++;
 	}
-	return (i);
+	if (i * i == nb)
+		return (i);
+	return (0);
 }
 
 /*#include <stdio.h>
@@ -32,6 +36,8 @@ int	main(void)
 	int	n;
 
 	n = 2009370276;
+	n = -1073741824;
+	n = 2147483647;
 	printf("sqrt(%d) = %d\n", n, ft_sqrt(n));
 	return (0);
 }*/

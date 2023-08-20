@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 20:30:04 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/16 20:48:42 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 20:09:57 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ int	ft_iterative_factorial(int nb)
 {
 	int	res;
 
+	if (nb < 0 || nb > 12)
+		return (0);
 	if (nb == 0)
 		return (1);
 	res = nb;

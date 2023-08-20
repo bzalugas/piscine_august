@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 20:54:33 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/16 21:00:52 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 20:16:18 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	main(void)
 	int	pow;
 	int	res;
 
-	n = 5;
-	pow = 4;
+	n = 7;
+	pow = -2;
 	res = ft_iterative_power(n, pow);
 	printf("%d^%d = %d\n", n, pow, res);
 	return (0);

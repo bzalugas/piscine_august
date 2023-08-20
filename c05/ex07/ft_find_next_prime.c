@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:59:15 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/19 02:11:04 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 20:53:15 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
+	if (nb < 2)
+		return (2);
 	while (!ft_is_prime(nb))
 		nb++;
 	return (nb);
@@ -58,7 +60,11 @@ int	ft_find_next_prime(int nb)
 /*#include <stdio.h>
 int	main(void)
 {
-	int n = ft_find_next_prime(6);
-	printf("%d\n", n);
+	int n;
+	int	res;
+
+	n = -2147483648;
+	res = ft_find_next_prime(n);
+	printf("next prime from %d is %d\n", n, res);
 	return (0);
 }*/

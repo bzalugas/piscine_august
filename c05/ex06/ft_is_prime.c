@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:24:30 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/18 11:05:23 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/19 20:44:57 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(void)
 {
 	int	n;
 
-	n = 2147483647;
+	n = -23;
 	printf("%d is %s\n", n, ft_is_prime(n) ? "prime" : "not prime");
 	return (0);
 }*/
