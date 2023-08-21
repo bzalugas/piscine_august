@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 12:53:07 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/21 13:40:00 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/21 19:58:33 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,12 @@ int	ft_strlen(char *str)
 int	total_len(int size, char **strs, char *sep)
 {
 	int	i;
-	int	j;
 	int	len;
 
 	len = 0;
-	i = 0;
-	while (i < size)
-	{
-		j = 0;
-		while (strs[i][j])
-			j++;
-		len += j;
-		/* len += ft_strlen(strs[i]); */
-		/* if (i + 1 < size) */
-		/* 	len += ft_strlen(sep); */
-		i++;
-	}
+	i = -1;
+	while (++i < size)
+		len += ft_strlen(strs[i]);
 	len += (ft_strlen(sep) * (size - 1));
 	return (len);
 }
@@ -88,13 +78,15 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (new);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(int argc, char **argv)
 {
+	char	*strs[] = {"Bonjour", "a", "tous", "ca va ?"};
 	char	*s;
 
-	s = ft_strjoin(argc - 1, &argv[1], ", ");
+	//s = ft_strjoin(argc - 1, &argv[1], ", ");
+	s = ft_strjoin(0, strs, "|");
 	printf("args = %s\n", s);
 	free(s);
 	return (0);
-}
+}*/
