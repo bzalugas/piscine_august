@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 08:39:46 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/22 08:42:16 by bazaluga         ###   ########.fr       */
+/*   Created: 2023/08/22 08:43:10 by bazaluga          #+#    #+#             */
+/*   Updated: 2023/08/22 08:45:12 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,14 @@ void	ft_putstr(char *str)
 
 int	main(int argc, char *argv[])
 {
-	(void)argc;
-	ft_putstr(argv[0]);
-	ft_putstr("\n");
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		ft_putstr("\n");
+		i++;
+	}
 	return (0);
 }
