@@ -6,30 +6,21 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 00:15:19 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/19 19:32:10 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/22 09:15:21 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strdup(char *src)
 {
-	unsigned int	len;
 	char			*dst;
 	unsigned int	i;
 
-	len = ft_strlen(src);
-	dst = malloc(sizeof(char) * (len + 1));
+	i = 0;
+	while (src[i])
+		i++;
+	dst = malloc(sizeof(char) * (i + 1));
 	if (!dst)
 		return (NULL);
 	i = 0;
@@ -43,12 +34,17 @@ char	*ft_strdup(char *src)
 }
 
 /*#include <stdio.h>
+#include <string.h>
 int	main(void)
 {
 	char	*d;
+	char	*e;
 
 	d = ft_strdup("salut les amis");
+	e = strdup("salut les amis");
 	printf("%s\n", d);
+	printf("%s\n", e);
 	free(d);
+	free(e);
 	return (0);
 }*/
