@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:59:15 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/19 20:53:15 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/22 11:54:47 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_is_prime(int nb)
 		return (0);
 	max = ft_sqrt(nb);
 	i = 2;
-	while (i < max)
+	while (i <= max)
 	{
 		if (nb % i == 0)
 			return (0);

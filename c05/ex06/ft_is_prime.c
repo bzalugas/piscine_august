@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:24:30 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/19 20:44:57 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/22 11:55:43 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_is_prime(int nb)
 		return (0);
 	max = ft_sqrt(nb);
 	i = 2;
-	while (i < max)
+	while (i <= max)
 	{
 		if (nb % i == 0)
 			return (0);
@@ -53,7 +53,7 @@ int	main(void)
 {
 	int	n;
 
-	n = -23;
-	printf("%d is %s\n", n, ft_is_prime(n) ? "prime" : "not prime");
+	n = 961;
+	printf("%d => %d\n", n, ft_is_prime(n));
 	return (0);
 }*/
