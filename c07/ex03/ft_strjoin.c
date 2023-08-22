@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 12:53:07 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/21 19:58:33 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/22 10:42:10 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 /*#include <stdio.h>
 int	main(int argc, char **argv)
 {
-	char	*strs[] = {"Bonjour", "a", "tous", "ca va ?"};
+	//char	*strs[] = {"Bonjour", "a", "tous", "ca va ?"};
 	char	*s;
 
-	//s = ft_strjoin(argc - 1, &argv[1], ", ");
-	s = ft_strjoin(0, strs, "|");
+	s = ft_strjoin(argc - 1, &argv[1], " => ");
+	//s = ft_strjoin(0, strs, "|");
 	printf("args = %s\n", s);
 	free(s);
 	return (0);

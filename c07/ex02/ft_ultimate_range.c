@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 09:18:05 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/22 09:26:05 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/22 09:58:40 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int	ft_ultimate_range(int **range, int min, int max)
 	i = 0;
 	while (min < max)
 	{
-		*range[i] = min;
+		(*range)[i] = min;
 		min++;
 		i++;
 	}
 	return (size);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
 	int	min;
@@ -54,4 +54,4 @@ int	main(void)
 		i++;
 	}
 	printf("\n");
-}
+}*/
