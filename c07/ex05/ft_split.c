@@ -6,93 +6,111 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:37:49 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/22 18:21:56 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/23 21:24:26 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	is_cset(char c, char *str)
+int	is_sep(char c, char *charset)
 {
 	int	i;
 
-	while (str[i])
+	i = 0;
+	while (charset[i])
 	{
-		if (str[i] == c)
+		if (c == charset[i])
 			return (1);
+		i++;
 	}
 	return (0);
 }
 
-int	need_for_split(char *str, char *charset, int i)
-{
-	if ((i == 0 && !is_cset(str[i], charset))
-		|| (i > 0 && !is_cset(str[i], charset)
-			&& is_cset(str[i - 1], charset)))
-		return (1);
-	return (0);
-}
-
-int	count_strs(char *str, char *charset)
+int	count_size(char *str, char *charset)
 {
 	int	i;
-	int	j;
+	int	sep;
 	int	count;
 
-	count = 0;
 	i = 0;
+	count = 0;
 	while (str[i])
 	{
-		if (need_for_split(str, charset, i))
+		sep = is_sep(str[i], charset);
+		if ((i == 0 && !sep) || (i > 0 && !sep && is_sep(str[i - 1], charset)))
 			count++;
 		i++;
 	}
 	return (count);
 }
 
-char	*ft_strndup(char *str, unsigned int n)
+int	next_split(char *str, char *charset)
 {
-	unsigned int	i;
-	char			*new;
+	int	i;
 
 	i = 0;
-	while (str[i] && i < n)
-		i++;
-	new = (char *)malloc(sizeof(char) * (i + 1));
-	if (!new)
-		return (NULL);
-	i = 0;
-	while (str[i] && i < n)
+	while (str[i])
 	{
-		new[i] = str[i];
+		if (is_sep(str[i], charset))
+			return (i);
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
+	return (-1);
+}
+
+char	*ft_strncpy(char *dst, char *src, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (src[i] && i < n)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
 
 char	**ft_split(char *str, char *charset)
 {
-	char	**strs;
 	int		size;
 	int		i;
-	int		j;
+	int		len;
+	char	**strs;
 
-	size = count_strs(str, charset);
+	size = count_size(str, charset);
 	strs = (char **)malloc(sizeof(char *) * (size + 1));
+	strs[size] = NULL;
 	if (!strs)
 		return (NULL);
-	strs[size] = NULL;
 	i = 0;
 	while (i < size)
 	{
-		j = 0;
-		while (str[j] && !is_cset(str[j], charset))
-			j++;
-		strs[i] = ft_strndup(str, j);
-		while (str[j] && is_cset(str[j], charset))
-			j++;
-		str += j;
+		len = next_split(str, charset);
+		strs[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (!strs[i])
+			return (NULL);
+		ft_strncpy(strs[i], str, len);
+		while (is_sep(str[len], charset))
+			len++;
+		str += len;
 		i++;
 	}
+	return (strs);
+}
+
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	if (ac != 3)
+		return (1);
+	char	**s = ft_split(av[1], av[2]);
+	int i = 0;
+	while (s[i])
+	{
+		printf("%s\n", s[i]);
+		i++;
+	}
+	return (0);
 }
