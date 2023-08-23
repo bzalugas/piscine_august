@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 10:47:33 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/22 13:17:08 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:38:06 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +79,6 @@ int	ft_atoi_base(char *str, char *base)
 	return (nb * sign);
 }
 
-/* char	*itoa_base(int n, char *base, int len) */
-/* { */
-/* 	char	*str; */
-/* 	int		len_base; */
-
-/* 	len_base = ft_strlen(base); */
-/* 	if (n < len_base) */
-/* 	{ */
-/* 		str = (char *)malloc(sizeof()) */
-/* 	} */
-/* } */
-
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	char	*str;
@@ -114,5 +102,6 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 	res = ft_convert_base(n, base_f, base_t);
 	printf("%s in base %s becomes\n%s in base %s\n", n, base_f, res, base_t);
+	free(res);
 	return (0);
 }*/
