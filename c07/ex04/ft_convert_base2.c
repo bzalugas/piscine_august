@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:12:46 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/22 13:14:35 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/24 15:38:00 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	nb_digits(long int n, int len_base)
 {
 	int	count;
 
+	if (n == 0)
+		return (1);
 	count = 0;
 	if (n < 0)
 	{
@@ -40,21 +42,17 @@ int	nb_digits(long int n, int len_base)
 	return (count);
 }
 
-char	*ft_itoa_base(int n, char *base)
+char	*create_num(long int nb, char *base, int len_nb, int len_base)
 {
-	char		*str;
-	int			len_base;
 	int			i;
-	long int	nb;
-	int			len_nb;
+	char		*str;
 
-	nb = n;
-	len_base = ft_strlen(base);
-	len_nb = nb_digits(nb, len_base);
 	str = (char *)malloc(sizeof(char) * (len_nb + 1));
 	if (!str)
 		return (NULL);
 	str[len_nb] = '\0';
+	if (nb == 0)
+		str[0] = base[0];
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -67,4 +65,16 @@ char	*ft_itoa_base(int n, char *base)
 		nb /= len_base;
 	}
 	return (str);
+}
+
+char	*ft_itoa_base(int n, char *base)
+{
+	int			len_base;
+	long int	nb;
+	int			len_nb;
+
+	nb = n;
+	len_base = ft_strlen(base);
+	len_nb = nb_digits(nb, len_base);
+	return (create_num(nb, base, len_nb, len_base));
 }

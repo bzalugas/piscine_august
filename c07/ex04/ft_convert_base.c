@@ -6,12 +6,11 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 10:47:33 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/22 16:38:06 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/24 15:41:20 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_strlen(char *str);
 char	*ft_itoa_base(int n, char *base);
@@ -93,11 +92,15 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (str);
 }
 
-/*int	main(void)
+/*#include <stdio.h>
+
+int	main(int argc, char **argv)
 {
-	char	n[] = "ponee";
-	char	base_f[] = "poneyvif";
-	char	base_t[] = "0123456789";
+	if (argc != 4)
+		return (1);
+	char	*n = argv[1];
+	char	*base_f = argv[2];
+	char	*base_t = argv[3];
 	char	*res;
 
 	res = ft_convert_base(n, base_f, base_t);

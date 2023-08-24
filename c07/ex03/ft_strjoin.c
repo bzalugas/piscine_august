@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 12:53:07 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/22 10:42:10 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/24 15:41:48 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	total_len(int size, char **strs, char *sep)
 	int	i;
 	int	len;
 
+	if (size == 0)
+		return (0);
 	len = 0;
 	i = -1;
 	while (++i < size)
@@ -81,7 +83,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 /*#include <stdio.h>
 int	main(int argc, char **argv)
 {
-	//char	*strs[] = {"Bonjour", "a", "tous", "ca va ?"};
+	char	**strs = NULL;
 	char	*s;
 
 	s = ft_strjoin(argc - 1, &argv[1], " => ");

@@ -6,7 +6,7 @@
 /*   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:37:49 by bazaluga          #+#    #+#             */
-/*   Updated: 2023/08/24 09:53:54 by bazaluga         ###   ########.fr       */
+/*   Updated: 2023/08/24 16:01:10 by bazaluga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,28 @@ int	next_split(char *str, char *charset)
 			return (i);
 		i++;
 	}
-	return (-1);
+	return (i);
 }
 
-char	*ft_strncpy(char *dst, char *src, unsigned int n)
+char	*ft_strndup(char *str, unsigned int n)
 {
 	unsigned int	i;
+	char			*new;
 
 	i = 0;
-	while (src[i] && i < n)
+	while (str[i] && i < n)
+		i++;
+	new = (char *)malloc(sizeof(char) * (i + 1));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (str[i] && i < n)
 	{
-		dst[i] = src[i];
+		new[i] = str[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	new[i] = '\0';
+	return (new);
 }
 
 char	**ft_split(char *str, char *charset)
@@ -87,20 +94,17 @@ char	**ft_split(char *str, char *charset)
 	i = 0;
 	while (i < size)
 	{
+		while (is_sep(*str, charset))
+			str++;
 		len = next_split(str, charset);
-		strs[i] = (char *)malloc(sizeof(char) * (len + 1));
-		if (!strs[i])
-			return (NULL);
-		ft_strncpy(strs[i], str, len);
-		while (is_sep(str[len], charset))
-			len++;
+		strs[i] = ft_strndup(str, len);
 		str += len;
 		i++;
 	}
 	return (strs);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(int ac, char **av)
 {
 	if (ac != 3)
@@ -113,4 +117,4 @@ int	main(int ac, char **av)
 		i++;
 	}
 	return (0);
-}
+}*/
